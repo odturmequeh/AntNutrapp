@@ -1,0 +1,484 @@
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.RadioButton;
+import android.widget.TextView;
+import androidx.appcompat.app.AppCompatActivity;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import kotlin.Metadata;
+import kotlin.jvm.internal.Intrinsics;
+import kotlin.jvm.internal.Ref;
+
+/* compiled from: MainActivity.kt */
+@Metadata(d1 = {"\u0000:\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u000e\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0004\u0018\u00002\u00020\u0001B\u0005¢\u0006\u0002\u0010\u0002J\u000e\u0010\u001e\u001a\u00020\u001f2\u0006\u0010 \u001a\u00020!J\u000e\u0010\"\u001a\u00020\u001f2\u0006\u0010 \u001a\u00020!J\u000e\u0010#\u001a\u00020\u001f2\u0006\u0010 \u001a\u00020!J\u0012\u0010$\u001a\u00020\u001f2\b\u0010%\u001a\u0004\u0018\u00010&H\u0014J\u0010\u0010'\u001a\u00020\u001f2\u0006\u0010%\u001a\u00020&H\u0014J\u0010\u0010(\u001a\u00020\u001f2\u0006\u0010)\u001a\u00020&H\u0014R\u001a\u0010\u0003\u001a\u00020\u0004X\u0086.¢\u0006\u000e\n\u0000\u001a\u0004\b\u0005\u0010\u0006\"\u0004\b\u0007\u0010\bR\u001a\u0010\t\u001a\u00020\nX\u0086.¢\u0006\u000e\n\u0000\u001a\u0004\b\u000b\u0010\f\"\u0004\b\r\u0010\u000eR\u001a\u0010\u000f\u001a\u00020\u0010X\u0086.¢\u0006\u000e\n\u0000\u001a\u0004\b\u0011\u0010\u0012\"\u0004\b\u0013\u0010\u0014R\u001a\u0010\u0015\u001a\u00020\u0010X\u0086.¢\u0006\u000e\n\u0000\u001a\u0004\b\u0016\u0010\u0012\"\u0004\b\u0017\u0010\u0014R\u001a\u0010\u0018\u001a\u00020\u0010X\u0086.¢\u0006\u000e\n\u0000\u001a\u0004\b\u0019\u0010\u0012\"\u0004\b\u001a\u0010\u0014R\u001a\u0010\u001b\u001a\u00020\u0004X\u0086.¢\u0006\u000e\n\u0000\u001a\u0004\b\u001c\u0010\u0006\"\u0004\b\u001d\u0010\b¨\u0006*"}, d2 = {"Lapp/apaiary/AntNutrAPP/MainActivity;", "Landroidx/appcompat/app/AppCompatActivity;", "()V", "acostadoMedicion", "Landroid/widget/RadioButton;", "getAcostadoMedicion", "()Landroid/widget/RadioButton;", "setAcostadoMedicion", "(Landroid/widget/RadioButton;)V", "botonselectNacimiento", "Landroid/widget/Button;", "getBotonselectNacimiento", "()Landroid/widget/Button;", "setBotonselectNacimiento", "(Landroid/widget/Button;)V", "edema", "Landroid/widget/TextView;", "getEdema", "()Landroid/widget/TextView;", "setEdema", "(Landroid/widget/TextView;)V", "genero", "getGenero", "setGenero", "medicion", "getMedicion", "setMedicion", "pieMedicion", "getPieMedicion", "setPieMedicion", "evento", "", "view", "Landroid/view/View;", "eventoEdema", "eventoMedicion", "onCreate", "savedInstanceState", "Landroid/os/Bundle;", "onRestoreInstanceState", "onSaveInstanceState", "outState", "app_release"}, k = 1, mv = {1, 5, 1}, xi = 48)
+/* loaded from: classes.dex */
+public final class MainActivity extends AppCompatActivity {
+    public RadioButton acostadoMedicion;
+    public Button botonselectNacimiento;
+    public TextView edema;
+    public TextView genero;
+    public TextView medicion;
+    public RadioButton pieMedicion;
+
+    public final TextView getGenero() {
+        TextView textView = this.genero;
+        if (textView != null) {
+            return textView;
+        }
+        Intrinsics.throwUninitializedPropertyAccessException("genero");
+        return null;
+    }
+
+    public final void setGenero(TextView textView) {
+        Intrinsics.checkNotNullParameter(textView, "<set-?>");
+        this.genero = textView;
+    }
+
+    public final TextView getEdema() {
+        TextView textView = this.edema;
+        if (textView != null) {
+            return textView;
+        }
+        Intrinsics.throwUninitializedPropertyAccessException("edema");
+        return null;
+    }
+
+    public final void setEdema(TextView textView) {
+        Intrinsics.checkNotNullParameter(textView, "<set-?>");
+        this.edema = textView;
+    }
+
+    public final TextView getMedicion() {
+        TextView textView = this.medicion;
+        if (textView != null) {
+            return textView;
+        }
+        Intrinsics.throwUninitializedPropertyAccessException("medicion");
+        return null;
+    }
+
+    public final void setMedicion(TextView textView) {
+        Intrinsics.checkNotNullParameter(textView, "<set-?>");
+        this.medicion = textView;
+    }
+
+    public final RadioButton getPieMedicion() {
+        RadioButton radioButton = this.pieMedicion;
+        if (radioButton != null) {
+            return radioButton;
+        }
+        Intrinsics.throwUninitializedPropertyAccessException("pieMedicion");
+        return null;
+    }
+
+    public final void setPieMedicion(RadioButton radioButton) {
+        Intrinsics.checkNotNullParameter(radioButton, "<set-?>");
+        this.pieMedicion = radioButton;
+    }
+
+    public final RadioButton getAcostadoMedicion() {
+        RadioButton radioButton = this.acostadoMedicion;
+        if (radioButton != null) {
+            return radioButton;
+        }
+        Intrinsics.throwUninitializedPropertyAccessException("acostadoMedicion");
+        return null;
+    }
+
+    public final void setAcostadoMedicion(RadioButton radioButton) {
+        Intrinsics.checkNotNullParameter(radioButton, "<set-?>");
+        this.acostadoMedicion = radioButton;
+    }
+
+    public final Button getBotonselectNacimiento() {
+        Button button = this.botonselectNacimiento;
+        if (button != null) {
+            return button;
+        }
+        Intrinsics.throwUninitializedPropertyAccessException("botonselectNacimiento");
+        return null;
+    }
+
+    public final void setBotonselectNacimiento(Button button) {
+        Intrinsics.checkNotNullParameter(button, "<set-?>");
+        this.botonselectNacimiento = button;
+    }
+
+    /* JADX INFO: Access modifiers changed from: protected */
+    /* JADX WARN: Type inference failed for: r11v4, types: [T, java.lang.String] */
+    /* JADX WARN: Type inference failed for: r12v3, types: [T, java.lang.String] */
+    /* JADX WARN: Type inference failed for: r5v3, types: [T, java.lang.String] */
+    /* JADX WARN: Type inference failed for: r8v3, types: [T, java.lang.String] */
+    @Override // androidx.appcompat.app.AppCompatActivity, androidx.fragment.app.FragmentActivity, androidx.activity.ComponentActivity, androidx.core.app.ComponentActivity, android.app.Activity
+    public void onCreate(Bundle bundle) {
+        boolean z;
+        super.onCreate(bundle);
+        setContentView(R.layout.activity_main);
+        MainActivity mainActivity = this;
+        MobileAds.initialize(mainActivity);
+        AdRequest build = new AdRequest.Builder().build();
+        ((AdView) findViewById(R.id.adView1N)).loadAd(build);
+        ((AdView) findViewById(R.id.adView2N)).loadAd(build);
+        Button button = (Button) findViewById(R.id.botonCalcular);
+        final EditText editText = (EditText) findViewById(R.id.campoNombre);
+        final EditText editText2 = (EditText) findViewById(R.id.campoIdentificacion);
+        final EditText campoTalla = (EditText) findViewById(R.id.campoTalla);
+        final EditText campoPeso = (EditText) findViewById(R.id.campoPeso);
+        final EditText campoMuac = (EditText) findViewById(R.id.campoMUAC);
+        final EditText campoTriceps = (EditText) findViewById(R.id.campoTriceps);
+        final EditText campoCefalico = (EditText) findViewById(R.id.campoCefalico);
+        final EditText campoSubescapular = (EditText) findViewById(R.id.campoSubcapular);
+        Button button2 = (Button) findViewById(R.id.botonNacimiento);
+        Button button3 = (Button) findViewById(R.id.botonEdad);
+        final TextView textView = (TextView) findViewById(R.id.resEdad);
+        Button button4 = (Button) findViewById(R.id.botonLimpiar);
+        TextView textView2 = (TextView) findViewById(R.id.resEdadmeses);
+        final TextView textView3 = (TextView) findViewById(R.id.resEdadmeses);
+        final TextView textView4 = (TextView) findViewById(R.id.selectGenero);
+        final TextView textView5 = (TextView) findViewById(R.id.selectMedicion);
+        RadioButton radioButton = (RadioButton) findViewById(R.id.masculino);
+        RadioButton radioButton2 = (RadioButton) findViewById(R.id.femenino);
+        RadioButton radioButton3 = (RadioButton) findViewById(R.id.siEdema);
+        RadioButton radioButton4 = (RadioButton) findViewById(R.id.noEdema);
+        final TextView helperPeso = (TextView) findViewById(R.id.helperPeso);
+        final TextView helperTalla = (TextView) findViewById(R.id.helperTalla);
+        final TextView helperCefalico = (TextView) findViewById(R.id.helperCefalico);
+        final TextView helperMuac = (TextView) findViewById(R.id.helperMuac);
+        final TextView helperSubescapular = (TextView) findViewById(R.id.helperSubescapular);
+        final TextView helperTriceps = (TextView) findViewById(R.id.helperTriceps);
+        ImageButton imageButton = (ImageButton) findViewById(R.id.botonHomePage);
+        TextView textView6 = (TextView) findViewById(R.id.fechaIngresada);
+        Intent intent = getIntent();
+        String stringExtra = intent.getStringExtra("edad");
+        String stringExtra2 = intent.getStringExtra("cantidadMeses");
+        final Ref.ObjectRef objectRef = new Ref.ObjectRef();
+        objectRef.element = intent.getStringExtra("mesesExactos");
+        String stringExtra3 = intent.getStringExtra("año");
+        String stringExtra4 = intent.getStringExtra("mes");
+        String stringExtra5 = intent.getStringExtra("dia");
+        String stringExtra6 = intent.getStringExtra("visibleFecha");
+        final Ref.ObjectRef objectRef2 = new Ref.ObjectRef();
+        objectRef2.element = intent.getStringExtra("totalAñosEdad");
+        final Ref.ObjectRef objectRef3 = new Ref.ObjectRef();
+        objectRef3.element = intent.getStringExtra("totalMesesEdad");
+        final Ref.ObjectRef objectRef4 = new Ref.ObjectRef();
+        objectRef4.element = intent.getStringExtra("totalDiasEdad");
+        textView.setText(stringExtra);
+        textView2.setText(stringExtra2);
+        View findViewById = findViewById(R.id.selectGenero);
+        Intrinsics.checkNotNullExpressionValue(findViewById, "findViewById<TextView>(c…utrAPP.R.id.selectGenero)");
+        setGenero((TextView) findViewById);
+        View findViewById2 = findViewById(R.id.selectMedicion);
+        Intrinsics.checkNotNullExpressionValue(findViewById2, "findViewById<TextView>(c…rAPP.R.id.selectMedicion)");
+        setMedicion((TextView) findViewById2);
+        textView6.setText("Fecha ingresada: " + ((Object) stringExtra3) + " - " + ((Object) stringExtra4) + " - " + ((Object) stringExtra5));
+        textView6.setVisibility(4);
+        if (Intrinsics.areEqual(stringExtra6, "SI")) {
+            textView6.setVisibility(0);
+        }
+        View findViewById3 = findViewById(R.id.dePie);
+        Intrinsics.checkNotNullExpressionValue(findViewById3, "findViewById<RadioButton…le.AntNutrAPP.R.id.dePie)");
+        setPieMedicion((RadioButton) findViewById3);
+        View findViewById4 = findViewById(R.id.acostado);
+        Intrinsics.checkNotNullExpressionValue(findViewById4, "findViewById<RadioButton…AntNutrAPP.R.id.acostado)");
+        setAcostadoMedicion((RadioButton) findViewById4);
+        View findViewById5 = findViewById(R.id.botonNacimiento);
+        Intrinsics.checkNotNullExpressionValue(findViewById5, "findViewById<Button>(com…APP.R.id.botonNacimiento)");
+        setBotonselectNacimiento((Button) findViewById5);
+        textView.getText().toString();
+        String obj = textView2.getText().toString();
+        if (!Intrinsics.areEqual(obj, "")) {
+            if (Integer.parseInt(obj) > 24) {
+                getPieMedicion().setChecked(true);
+                getMedicion().setText("De pie");
+            } else {
+                getAcostadoMedicion().setChecked(true);
+                getMedicion().setText("Acostado");
+            }
+        }
+        radioButton4.setChecked(true);
+        setEdema(new TextView(mainActivity));
+        getEdema().setText("NO");
+        button.setOnClickListener(new View.OnClickListener() { // from class: app.apaiary.AntNutrAPP.-$$Lambda$MainActivity$hFKoHlu5lzEj1pLR6wpNs954SnY
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                MainActivity.m9onCreate$lambda0(editText, editText2, campoTalla, campoPeso, campoMuac, campoTriceps, campoCefalico, campoSubescapular, textView4, this, textView5, textView3, objectRef, textView, objectRef2, objectRef3, objectRef4, helperTalla, helperPeso, helperCefalico, helperMuac, helperSubescapular, helperTriceps, view);
+            }
+        });
+        button2.setOnClickListener(new View.OnClickListener() { // from class: app.apaiary.AntNutrAPP.-$$Lambda$MainActivity$GvgygLjRa-jt1B-1gzevX1GxSMs
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                MainActivity.m10onCreate$lambda1(editText, editText2, campoTalla, campoPeso, campoMuac, campoTriceps, campoCefalico, campoSubescapular, textView4, this, view);
+            }
+        });
+        button3.setOnClickListener(new View.OnClickListener() { // from class: app.apaiary.AntNutrAPP.-$$Lambda$MainActivity$4PfSrYSKJJokQjWIjGDKuX4f3t4
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                MainActivity.m11onCreate$lambda2(editText, editText2, campoTalla, campoPeso, campoMuac, campoTriceps, campoCefalico, campoSubescapular, textView4, this, view);
+            }
+        });
+        Intent intent2 = getIntent();
+        String stringExtra7 = intent2.getStringExtra("Nombre");
+        String stringExtra8 = intent2.getStringExtra("identificacion");
+        String stringExtra9 = intent2.getStringExtra("talla");
+        String stringExtra10 = intent2.getStringExtra("peso");
+        String stringExtra11 = intent2.getStringExtra("muac");
+        String stringExtra12 = intent2.getStringExtra("triceps");
+        String stringExtra13 = intent2.getStringExtra("cefalico");
+        String stringExtra14 = intent2.getStringExtra("subescapular");
+        String stringExtra15 = intent2.getStringExtra("genero");
+        String stringExtra16 = intent2.getStringExtra("edema");
+        editText.setText(stringExtra7);
+        editText2.setText(stringExtra8);
+        campoTalla.setText(stringExtra9);
+        campoPeso.setText(stringExtra10);
+        campoMuac.setText(stringExtra11);
+        campoTriceps.setText(stringExtra12);
+        campoCefalico.setText(stringExtra13);
+        campoSubescapular.setText(stringExtra14);
+        textView4.setText(stringExtra15);
+        getEdema().setText(stringExtra16);
+        String obj2 = textView4.getText().toString();
+        if (Intrinsics.areEqual(obj2, "Masculino")) {
+            z = true;
+            radioButton.setChecked(true);
+        } else {
+            z = true;
+        }
+        if (Intrinsics.areEqual(obj2, "Femenino")) {
+            radioButton2.setChecked(z);
+        }
+        String obj3 = getEdema().getText().toString();
+        if (Intrinsics.areEqual(obj3, "SI")) {
+            radioButton3.setChecked(z);
+        }
+        if (Intrinsics.areEqual(obj3, "NO")) {
+            radioButton4.setChecked(z);
+        }
+        button4.setOnClickListener(new View.OnClickListener() { // from class: app.apaiary.AntNutrAPP.-$$Lambda$MainActivity$G3j-YEXuK8qndGi2JUZU4kHm3OI
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                MainActivity.m12onCreate$lambda3(MainActivity.this, view);
+            }
+        });
+        imageButton.setOnClickListener(new View.OnClickListener() { // from class: app.apaiary.AntNutrAPP.-$$Lambda$MainActivity$J02xqU2nw36hPNq6cQ3MNjIw0io
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                MainActivity.m13onCreate$lambda4(MainActivity.this, view);
+            }
+        });
+        Intrinsics.checkNotNullExpressionValue(campoTalla, "campoTalla");
+        Intrinsics.checkNotNullExpressionValue(helperTalla, "helperTalla");
+        onCreate$helperText(campoTalla, helperTalla, "Talla(cm)", "(Obligatorio)");
+        Intrinsics.checkNotNullExpressionValue(campoPeso, "campoPeso");
+        Intrinsics.checkNotNullExpressionValue(helperPeso, "helperPeso");
+        onCreate$helperText(campoPeso, helperPeso, "Peso(kg)", "(Obligatorio)");
+        Intrinsics.checkNotNullExpressionValue(campoCefalico, "campoCefalico");
+        Intrinsics.checkNotNullExpressionValue(helperCefalico, "helperCefalico");
+        onCreate$helperText(campoCefalico, helperCefalico, "P.Cefalico(cm) Opc.", "(Opcional)");
+        Intrinsics.checkNotNullExpressionValue(campoMuac, "campoMuac");
+        Intrinsics.checkNotNullExpressionValue(helperMuac, "helperMuac");
+        onCreate$helperText(campoMuac, helperMuac, "MUAC(cm) Opc.", "(Opcional)");
+        Intrinsics.checkNotNullExpressionValue(campoSubescapular, "campoSubescapular");
+        Intrinsics.checkNotNullExpressionValue(helperSubescapular, "helperSubescapular");
+        onCreate$helperText(campoSubescapular, helperSubescapular, "Subescapular(mm) Opc.", "(Opcional)");
+        Intrinsics.checkNotNullExpressionValue(campoTriceps, "campoTriceps");
+        Intrinsics.checkNotNullExpressionValue(helperTriceps, "helperTriceps");
+        onCreate$helperText(campoTriceps, helperTriceps, "Triceps(mm) Opc.", "(Opcional)");
+    }
+
+    private static final void onCreate$helpertextCalcular(TextView textView, TextView textView2, String str, String str2) {
+        if (Intrinsics.areEqual(textView.getText().toString(), "")) {
+            textView2.setText(str2);
+        } else {
+            textView2.setText(str);
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x00f1  */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x00f3  */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x00f7  */
+    /* JADX WARN: Removed duplicated region for block: B:32:0x0103  */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x0106  */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x010a  */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x013e  */
+    /* renamed from: onCreate$lambda-0  reason: not valid java name */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+        To view partially-correct code enable 'Show inconsistent code' option in preferences
+    */
+    public static final void m9onCreate$lambda0(android.widget.EditText r23, android.widget.EditText r24, android.widget.EditText r25, android.widget.EditText r26, android.widget.EditText r27, android.widget.EditText r28, android.widget.EditText r29, android.widget.EditText r30, android.widget.TextView r31, app.apaiary.AntNutrAPP.MainActivity r32, android.widget.TextView r33, android.widget.TextView r34, kotlin.jvm.internal.Ref.ObjectRef r35, android.widget.TextView r36, kotlin.jvm.internal.Ref.ObjectRef r37, kotlin.jvm.internal.Ref.ObjectRef r38, kotlin.jvm.internal.Ref.ObjectRef r39, android.widget.TextView r40, android.widget.TextView r41, android.widget.TextView r42, android.widget.TextView r43, android.widget.TextView r44, android.widget.TextView r45, android.view.View r46) {
+        /*
+            Method dump skipped, instructions count: 609
+            To view this dump change 'Code comments level' option to 'DEBUG'
+        */
+        throw new UnsupportedOperationException("Method not decompiled: app.apaiary.AntNutrAPP.MainActivity.m9onCreate$lambda0(android.widget.EditText, android.widget.EditText, android.widget.EditText, android.widget.EditText, android.widget.EditText, android.widget.EditText, android.widget.EditText, android.widget.EditText, android.widget.TextView, app.apaiary.AntNutrAPP.MainActivity, android.widget.TextView, android.widget.TextView, kotlin.jvm.internal.Ref$ObjectRef, android.widget.TextView, kotlin.jvm.internal.Ref$ObjectRef, kotlin.jvm.internal.Ref$ObjectRef, kotlin.jvm.internal.Ref$ObjectRef, android.widget.TextView, android.widget.TextView, android.widget.TextView, android.widget.TextView, android.widget.TextView, android.widget.TextView, android.view.View):void");
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    /* renamed from: onCreate$lambda-1  reason: not valid java name */
+    public static final void m10onCreate$lambda1(EditText editText, EditText editText2, EditText editText3, EditText editText4, EditText editText5, EditText editText6, EditText editText7, EditText editText8, TextView textView, MainActivity this$0, View view) {
+        Intrinsics.checkNotNullParameter(this$0, "this$0");
+        String format = new SimpleDateFormat("yyyy").format(new Date());
+        String format2 = new SimpleDateFormat("MM").format(new Date());
+        String format3 = new SimpleDateFormat("dd").format(new Date());
+        String obj = editText.getText().toString();
+        String obj2 = editText2.getText().toString();
+        String obj3 = editText3.getText().toString();
+        String obj4 = editText4.getText().toString();
+        String obj5 = editText5.getText().toString();
+        String obj6 = editText6.getText().toString();
+        String obj7 = editText7.getText().toString();
+        String obj8 = editText8.getText().toString();
+        String obj9 = textView.getText().toString();
+        String obj10 = this$0.getEdema().getText().toString();
+        Intent intent = new Intent(this$0, MainActivity3.class);
+        intent.putExtra("año", format);
+        intent.putExtra("mes", format2);
+        intent.putExtra("dia", format3);
+        intent.putExtra("Nombre", obj);
+        intent.putExtra("identificacion", obj2);
+        intent.putExtra("talla", obj3);
+        intent.putExtra("peso", obj4);
+        intent.putExtra("muac", obj5);
+        intent.putExtra("triceps", obj6);
+        intent.putExtra("cefalico", obj7);
+        intent.putExtra("subescapular", obj8);
+        intent.putExtra("genero", obj9);
+        intent.putExtra("edema", obj10);
+        this$0.startActivity(intent);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    /* renamed from: onCreate$lambda-2  reason: not valid java name */
+    public static final void m11onCreate$lambda2(EditText editText, EditText editText2, EditText editText3, EditText editText4, EditText editText5, EditText editText6, EditText editText7, EditText editText8, TextView textView, MainActivity this$0, View view) {
+        Intrinsics.checkNotNullParameter(this$0, "this$0");
+        String obj = editText.getText().toString();
+        String obj2 = editText2.getText().toString();
+        String obj3 = editText3.getText().toString();
+        String obj4 = editText4.getText().toString();
+        String obj5 = editText5.getText().toString();
+        String obj6 = editText6.getText().toString();
+        String obj7 = editText7.getText().toString();
+        String obj8 = editText8.getText().toString();
+        String obj9 = textView.getText().toString();
+        String obj10 = this$0.getEdema().getText().toString();
+        Intent intent = new Intent(this$0, MainActivity4.class);
+        intent.putExtra("Nombre", obj);
+        intent.putExtra("identificacion", obj2);
+        intent.putExtra("talla", obj3);
+        intent.putExtra("peso", obj4);
+        intent.putExtra("muac", obj5);
+        intent.putExtra("triceps", obj6);
+        intent.putExtra("cefalico", obj7);
+        intent.putExtra("subescapular", obj8);
+        intent.putExtra("genero", obj9);
+        intent.putExtra("edema", obj10);
+        this$0.startActivity(intent);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    /* renamed from: onCreate$lambda-3  reason: not valid java name */
+    public static final void m12onCreate$lambda3(MainActivity this$0, View view) {
+        Intrinsics.checkNotNullParameter(this$0, "this$0");
+        this$0.startActivity(new Intent(this$0, MainActivity.class));
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    /* renamed from: onCreate$lambda-4  reason: not valid java name */
+    public static final void m13onCreate$lambda4(MainActivity this$0, View view) {
+        Intrinsics.checkNotNullParameter(this$0, "this$0");
+        this$0.startActivity(new Intent(this$0, MainActivity5.class));
+    }
+
+    private static final void onCreate$helperText(final EditText editText, final TextView textView, final String str, final String str2) {
+        editText.setOnFocusChangeListener(new View.OnFocusChangeListener() { // from class: app.apaiary.AntNutrAPP.-$$Lambda$MainActivity$4W7tbIjXvbXnLCf2UUxtraV9jzY
+            @Override // android.view.View.OnFocusChangeListener
+            public final void onFocusChange(View view, boolean z) {
+                MainActivity.m8onCreate$helperText$lambda5(editText, textView, str2, str, view, z);
+            }
+        });
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    /* renamed from: onCreate$helperText$lambda-5  reason: not valid java name */
+    public static final void m8onCreate$helperText$lambda5(EditText campoEditText, TextView campoHelper, String mensajeSin, String mensaje, View view, boolean z) {
+        Intrinsics.checkNotNullParameter(campoEditText, "$campoEditText");
+        Intrinsics.checkNotNullParameter(campoHelper, "$campoHelper");
+        Intrinsics.checkNotNullParameter(mensajeSin, "$mensajeSin");
+        Intrinsics.checkNotNullParameter(mensaje, "$mensaje");
+        if (z) {
+            if (Intrinsics.areEqual(campoEditText.getText().toString(), "")) {
+                campoHelper.setText(mensajeSin);
+            } else {
+                campoHelper.setText(mensaje);
+            }
+        } else if (Intrinsics.areEqual(campoEditText.getText().toString(), "")) {
+            campoHelper.setText(mensajeSin);
+        } else {
+            campoHelper.setText(mensaje);
+        }
+    }
+
+    public final void evento(View view) {
+        Intrinsics.checkNotNullParameter(view, "view");
+        if (view instanceof RadioButton) {
+            if (view.getId() == R.id.masculino) {
+                getGenero().setText("Masculino");
+            }
+            if (view.getId() == R.id.femenino) {
+                getGenero().setText("Femenino");
+            }
+        }
+    }
+
+    public final void eventoEdema(View view) {
+        Intrinsics.checkNotNullParameter(view, "view");
+        if (view instanceof RadioButton) {
+            if (view.getId() == R.id.siEdema) {
+                getEdema().setText("SI");
+            }
+            if (view.getId() == R.id.noEdema) {
+                getEdema().setText("NO");
+            }
+        }
+    }
+
+    public final void eventoMedicion(View view) {
+        Intrinsics.checkNotNullParameter(view, "view");
+        if (view instanceof RadioButton) {
+            if (view.getId() == R.id.dePie) {
+                getMedicion().setText("De pie");
+            }
+            if (view.getId() == R.id.acostado) {
+                getMedicion().setText("Acostado");
+            }
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: protected */
+    @Override // androidx.appcompat.app.AppCompatActivity, androidx.fragment.app.FragmentActivity, androidx.activity.ComponentActivity, androidx.core.app.ComponentActivity, android.app.Activity
+    public void onSaveInstanceState(Bundle outState) {
+        Intrinsics.checkNotNullParameter(outState, "outState");
+        super.onSaveInstanceState(outState);
+        outState.putString("edad", ((TextView) findViewById(R.id.resEdad)).getText().toString());
+        outState.putString("talla", ((TextView) findViewById(R.id.campoTalla)).getText().toString());
+    }
+
+    @Override // android.app.Activity
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        Intrinsics.checkNotNullParameter(savedInstanceState, "savedInstanceState");
+        super.onRestoreInstanceState(savedInstanceState);
+        ((TextView) findViewById(R.id.resEdad)).setText(savedInstanceState.getString("edad"));
+        ((TextView) findViewById(R.id.campoTalla)).setText(savedInstanceState.getString("talla"));
+    }
+}
