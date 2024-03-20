@@ -1,0 +1,880 @@
+import android.content.Intent;
+import android.os.Bundle;
+import android.text.InputFilter;
+import android.text.Spanned;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.TextView;
+import androidx.appcompat.app.AppCompatActivity;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import kotlin.Metadata;
+import kotlin.jvm.internal.Intrinsics;
+import kotlin.jvm.internal.Ref;
+
+/* compiled from: MainActivity3.kt */
+@Metadata(d1 = {"\u0000\u001a\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\u0018\u00002\u00020\u0001:\u0001\u0007B\u0005¢\u0006\u0002\u0010\u0002J\u0012\u0010\u0003\u001a\u00020\u00042\b\u0010\u0005\u001a\u0004\u0018\u00010\u0006H\u0014¨\u0006\b"}, d2 = {"Lapp/apaiary/AntNutrAPP/MainActivity3;", "Landroidx/appcompat/app/AppCompatActivity;", "()V", "onCreate", "", "savedInstanceState", "Landroid/os/Bundle;", "InputFilterMinMax", "app_release"}, k = 1, mv = {1, 5, 1}, xi = 48)
+/* loaded from: classes.dex */
+public final class MainActivity3 extends AppCompatActivity {
+    /* JADX INFO: Access modifiers changed from: protected */
+    /* JADX WARN: Type inference failed for: r0v18, types: [T, java.lang.String] */
+    /* JADX WARN: Type inference failed for: r4v18, types: [T, java.lang.String] */
+    /* JADX WARN: Type inference failed for: r4v21, types: [T, java.lang.String] */
+    /* JADX WARN: Type inference failed for: r4v24, types: [T, java.lang.String] */
+    /* JADX WARN: Type inference failed for: r4v27, types: [T, java.lang.String] */
+    /* JADX WARN: Type inference failed for: r4v30, types: [T, java.lang.String] */
+    /* JADX WARN: Type inference failed for: r5v12, types: [T, java.lang.String] */
+    /* JADX WARN: Type inference failed for: r5v15, types: [T, java.lang.String] */
+    /* JADX WARN: Type inference failed for: r5v3, types: [T, java.lang.String] */
+    /* JADX WARN: Type inference failed for: r5v6, types: [T, java.lang.String] */
+    /* JADX WARN: Type inference failed for: r5v9, types: [T, java.lang.String] */
+    @Override // androidx.appcompat.app.AppCompatActivity, androidx.fragment.app.FragmentActivity, androidx.activity.ComponentActivity, androidx.core.app.ComponentActivity, android.app.Activity
+    public void onCreate(Bundle bundle) {
+        Ref.IntRef intRef;
+        super.onCreate(bundle);
+        setContentView(R.layout.activity_main3);
+        MobileAds.initialize(this);
+        AdRequest build = new AdRequest.Builder().build();
+        ((AdView) findViewById(R.id.adView1NFN)).loadAd(build);
+        ((AdView) findViewById(R.id.adView2NFN)).loadAd(build);
+        final EditText editText = (EditText) findViewById(R.id.year);
+        final EditText editText2 = (EditText) findViewById(R.id.month);
+        final EditText editText3 = (EditText) findViewById(R.id.day);
+        final TextView textView = (TextView) findViewById(R.id.edad);
+        final TextView textView2 = (TextView) findViewById(R.id.mesesTotal);
+        final TextView textView3 = (TextView) findViewById(R.id.mesesExactos);
+        Intent intent = getIntent();
+        String stringExtra = intent.getStringExtra("año");
+        String stringExtra2 = intent.getStringExtra("mes");
+        String stringExtra3 = intent.getStringExtra("dia");
+        Button button = (Button) findViewById(R.id.botonOK);
+        Button button2 = (Button) findViewById(R.id.botonCancel);
+        ImageButton imageButton = (ImageButton) findViewById(R.id.upYear);
+        ImageButton imageButton2 = (ImageButton) findViewById(R.id.downYear);
+        ImageButton imageButton3 = (ImageButton) findViewById(R.id.upMonth);
+        ImageButton imageButton4 = (ImageButton) findViewById(R.id.downMonth);
+        ImageButton imageButton5 = (ImageButton) findViewById(R.id.upDay);
+        ImageButton imageButton6 = (ImageButton) findViewById(R.id.downDay);
+        final Ref.ObjectRef objectRef = new Ref.ObjectRef();
+        objectRef.element = intent.getStringExtra("Nombre");
+        final Ref.ObjectRef objectRef2 = new Ref.ObjectRef();
+        objectRef2.element = intent.getStringExtra("identificacion");
+        final Ref.ObjectRef objectRef3 = new Ref.ObjectRef();
+        objectRef3.element = intent.getStringExtra("talla");
+        final Ref.ObjectRef objectRef4 = new Ref.ObjectRef();
+        objectRef4.element = intent.getStringExtra("peso");
+        final Ref.ObjectRef objectRef5 = new Ref.ObjectRef();
+        objectRef5.element = intent.getStringExtra("muac");
+        final Ref.ObjectRef objectRef6 = new Ref.ObjectRef();
+        objectRef6.element = intent.getStringExtra("triceps");
+        final Ref.ObjectRef objectRef7 = new Ref.ObjectRef();
+        objectRef7.element = intent.getStringExtra("cefalico");
+        final Ref.ObjectRef objectRef8 = new Ref.ObjectRef();
+        objectRef8.element = intent.getStringExtra("subescapular");
+        final Ref.ObjectRef objectRef9 = new Ref.ObjectRef();
+        objectRef9.element = intent.getStringExtra("genero");
+        final Ref.ObjectRef objectRef10 = new Ref.ObjectRef();
+        objectRef10.element = intent.getStringExtra("edema");
+        final Ref.ObjectRef objectRef11 = new Ref.ObjectRef();
+        objectRef11.element = intent.getStringExtra("medicion");
+        editText.setText(String.valueOf(stringExtra));
+        editText2.setText(String.valueOf(stringExtra2));
+        editText3.setText(String.valueOf(stringExtra3));
+        final Ref.DoubleRef doubleRef = new Ref.DoubleRef();
+        final Ref.IntRef intRef2 = new Ref.IntRef();
+        final Ref.IntRef intRef3 = new Ref.IntRef();
+        final Ref.IntRef intRef4 = new Ref.IntRef();
+        String yearCurrent = new SimpleDateFormat("yyyy").format(new Date());
+        editText2.setFilters(new InputFilter[]{new InputFilterMinMax(1, 12)});
+        String obj = editText3.getText().toString();
+        if (Intrinsics.areEqual(obj, "")) {
+            obj = "1";
+        }
+        Integer.parseInt(obj);
+        String obj2 = editText.getText().toString();
+        if (Intrinsics.areEqual(obj2, "")) {
+            Intrinsics.checkNotNullExpressionValue(yearCurrent, "yearCurrent");
+        } else {
+            yearCurrent = obj2;
+        }
+        int parseInt = Integer.parseInt(yearCurrent);
+        String obj3 = editText2.getText().toString();
+        int parseInt2 = Integer.parseInt(Intrinsics.areEqual(obj3, "") ? "1" : obj3);
+        Ref.IntRef intRef5 = new Ref.IntRef();
+        intRef5.element = 31;
+        final Ref.IntRef intRef6 = new Ref.IntRef();
+        intRef6.element = 1;
+        editText3.setFilters(new InputFilter[]{new InputFilterMinMax(intRef6.element, intRef5.element)});
+        button.setOnClickListener(new View.OnClickListener() { // from class: app.apaiary.AntNutrAPP.-$$Lambda$MainActivity3$BH619u5fqkHEgdbLF4sz-0iWVCM
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                MainActivity3.m32onCreate$lambda0(MainActivity3.this, textView, textView2, doubleRef, objectRef, objectRef2, objectRef3, objectRef4, objectRef5, objectRef6, objectRef7, objectRef8, objectRef9, objectRef10, objectRef11, textView3, editText, editText2, editText3, intRef2, intRef3, intRef4, view);
+            }
+        });
+        button2.setOnClickListener(new View.OnClickListener() { // from class: app.apaiary.AntNutrAPP.-$$Lambda$MainActivity3$BOFvqWKe_TiybsOCRpVmKvxCRjQ
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                MainActivity3.m33onCreate$lambda1(MainActivity3.this, objectRef, objectRef2, objectRef3, objectRef4, objectRef5, objectRef6, objectRef7, objectRef8, objectRef9, objectRef10, objectRef11, view);
+            }
+        });
+        boolean z = (parseInt % 4 == 0 && parseInt % 100 != 0) || parseInt % 400 == 0;
+        if (parseInt2 != 2) {
+            intRef = intRef5;
+        } else if (z) {
+            intRef = intRef5;
+            intRef.element = 29;
+        } else {
+            intRef = intRef5;
+            intRef.element = 28;
+        }
+        final Ref.IntRef intRef7 = intRef;
+        editText.setOnFocusChangeListener(new View.OnFocusChangeListener() { // from class: app.apaiary.AntNutrAPP.-$$Lambda$MainActivity3$N7z5kxwLy0-BdK7dhZHgjEnXe4s
+            @Override // android.view.View.OnFocusChangeListener
+            public final void onFocusChange(View view, boolean z2) {
+                MainActivity3.m35onCreate$lambda2(editText3, editText, editText2, intRef7, intRef6, intRef2, intRef3, intRef4, doubleRef, textView3, textView, textView2, view, z2);
+            }
+        });
+        editText2.setOnFocusChangeListener(new View.OnFocusChangeListener() { // from class: app.apaiary.AntNutrAPP.-$$Lambda$MainActivity3$Zp1OAL2XO-t4CVD1j6CM_es1KSQ
+            @Override // android.view.View.OnFocusChangeListener
+            public final void onFocusChange(View view, boolean z2) {
+                MainActivity3.m36onCreate$lambda3(editText3, editText, editText2, intRef7, intRef6, intRef2, intRef3, intRef4, doubleRef, textView3, textView, textView2, view, z2);
+            }
+        });
+        editText3.setOnFocusChangeListener(new View.OnFocusChangeListener() { // from class: app.apaiary.AntNutrAPP.-$$Lambda$MainActivity3$ZPf-wpdOaYa6DRrDML-vrEjLixE
+            @Override // android.view.View.OnFocusChangeListener
+            public final void onFocusChange(View view, boolean z2) {
+                MainActivity3.m37onCreate$lambda4(editText3, editText, editText2, intRef2, intRef3, intRef4, doubleRef, textView3, textView, textView2, view, z2);
+            }
+        });
+        final Ref.IntRef intRef8 = intRef;
+        imageButton.setOnClickListener(new View.OnClickListener() { // from class: app.apaiary.AntNutrAPP.-$$Lambda$MainActivity3$IzPirems2C8Yhx8qSRQP-OxDIek
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                MainActivity3.m38onCreate$lambda5(editText3, editText, editText2, intRef8, intRef6, intRef2, intRef3, intRef4, doubleRef, textView3, textView, textView2, view);
+            }
+        });
+        imageButton2.setOnClickListener(new View.OnClickListener() { // from class: app.apaiary.AntNutrAPP.-$$Lambda$MainActivity3$IHV30UoKB4arJHQPBQgXSKrQ9xI
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                MainActivity3.m39onCreate$lambda6(editText3, editText, editText2, intRef8, intRef6, intRef2, intRef3, intRef4, doubleRef, textView3, textView, textView2, view);
+            }
+        });
+        imageButton3.setOnClickListener(new View.OnClickListener() { // from class: app.apaiary.AntNutrAPP.-$$Lambda$MainActivity3$0hCc9TBLwoYmKUJE8yYTmUVSpUk
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                MainActivity3.m40onCreate$lambda7(editText3, editText, editText2, intRef8, intRef6, intRef2, intRef3, intRef4, doubleRef, textView3, textView, textView2, view);
+            }
+        });
+        imageButton4.setOnClickListener(new View.OnClickListener() { // from class: app.apaiary.AntNutrAPP.-$$Lambda$MainActivity3$Qo5EfO0HR3ufzD09fnJvbQGCk-k
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                MainActivity3.m41onCreate$lambda8(editText3, editText, editText2, intRef8, intRef6, intRef2, intRef3, intRef4, doubleRef, textView3, textView, textView2, view);
+            }
+        });
+        imageButton5.setOnClickListener(new View.OnClickListener() { // from class: app.apaiary.AntNutrAPP.-$$Lambda$MainActivity3$OYO1PqXiWRw9vWYhIYKZbDLV-wc
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                MainActivity3.m42onCreate$lambda9(editText3, editText, editText2, intRef8, intRef6, intRef2, intRef3, intRef4, doubleRef, textView3, textView, textView2, view);
+            }
+        });
+        imageButton6.setOnClickListener(new View.OnClickListener() { // from class: app.apaiary.AntNutrAPP.-$$Lambda$MainActivity3$8eMGwvUVoZptwxBOfb39bBSyu4Q
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                MainActivity3.m34onCreate$lambda10(editText3, editText, editText2, intRef8, intRef6, intRef2, intRef3, intRef4, doubleRef, textView3, textView, textView2, view);
+            }
+        });
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:109:0x025e  */
+    /* JADX WARN: Removed duplicated region for block: B:118:0x0292  */
+    /* JADX WARN: Removed duplicated region for block: B:126:0x033d  */
+    /* JADX WARN: Removed duplicated region for block: B:127:0x0340  */
+    /* JADX WARN: Removed duplicated region for block: B:130:0x0346  */
+    /* JADX WARN: Removed duplicated region for block: B:131:0x0349  */
+    /* JADX WARN: Removed duplicated region for block: B:134:0x034f  */
+    /* JADX WARN: Removed duplicated region for block: B:135:0x0352  */
+    /* JADX WARN: Removed duplicated region for block: B:138:0x0398  */
+    /* JADX WARN: Removed duplicated region for block: B:88:0x01d2  */
+    /* JADX WARN: Removed duplicated region for block: B:96:0x01fb  */
+    /* JADX WARN: Removed duplicated region for block: B:99:0x0216  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+        To view partially-correct code enable 'Show inconsistent code' option in preferences
+    */
+    private static final void onCreate$edad(android.widget.EditText r18, android.widget.EditText r19, android.widget.EditText r20, kotlin.jvm.internal.Ref.IntRef r21, kotlin.jvm.internal.Ref.IntRef r22, kotlin.jvm.internal.Ref.IntRef r23, kotlin.jvm.internal.Ref.DoubleRef r24, android.widget.TextView r25, android.widget.TextView r26, android.widget.TextView r27) {
+        /*
+            Method dump skipped, instructions count: 978
+            To view this dump change 'Code comments level' option to 'DEBUG'
+        */
+        throw new UnsupportedOperationException("Method not decompiled: app.apaiary.AntNutrAPP.MainActivity3.onCreate$edad(android.widget.EditText, android.widget.EditText, android.widget.EditText, kotlin.jvm.internal.Ref$IntRef, kotlin.jvm.internal.Ref$IntRef, kotlin.jvm.internal.Ref$IntRef, kotlin.jvm.internal.Ref$DoubleRef, android.widget.TextView, android.widget.TextView, android.widget.TextView):void");
+    }
+
+    private static final void onCreate$fechamaxima(EditText editText, EditText editText2, EditText editText3) {
+        String yearCurrent = new SimpleDateFormat("yyyy").format(new Date());
+        String monthCurrent = new SimpleDateFormat("MM").format(new Date());
+        String dayCurrent = new SimpleDateFormat("dd").format(new Date());
+        Intrinsics.checkNotNullExpressionValue(yearCurrent, "yearCurrent");
+        int parseInt = Integer.parseInt(yearCurrent);
+        Intrinsics.checkNotNullExpressionValue(monthCurrent, "monthCurrent");
+        int parseInt2 = Integer.parseInt(monthCurrent);
+        Intrinsics.checkNotNullExpressionValue(dayCurrent, "dayCurrent");
+        int parseInt3 = Integer.parseInt(dayCurrent);
+        String obj = editText.getText().toString();
+        if (Intrinsics.areEqual(obj, "")) {
+            editText.setText(yearCurrent);
+        } else {
+            yearCurrent = obj;
+        }
+        int parseInt4 = Integer.parseInt(yearCurrent);
+        String obj2 = editText2.getText().toString();
+        String str = "1";
+        if (Intrinsics.areEqual(obj2, "")) {
+            editText2.setText("1");
+            obj2 = "1";
+        }
+        int parseInt5 = Integer.parseInt(obj2);
+        String obj3 = editText3.getText().toString();
+        if (Intrinsics.areEqual(obj3, "")) {
+            editText3.setText("1");
+        } else {
+            str = obj3;
+        }
+        int parseInt6 = Integer.parseInt(str);
+        if (parseInt4 >= parseInt && parseInt5 >= parseInt2 && parseInt6 > parseInt3) {
+            editText.setText(String.valueOf(parseInt));
+            editText2.setText(String.valueOf(parseInt2));
+            editText3.setText(String.valueOf(parseInt3));
+        } else if (parseInt4 >= parseInt && parseInt5 > parseInt2) {
+            editText2.setText(String.valueOf(parseInt2));
+            editText.setText(String.valueOf(parseInt));
+        } else if (parseInt4 >= parseInt) {
+            editText.setText(String.valueOf(parseInt));
+        } else if (parseInt4 > parseInt) {
+            editText.setText(String.valueOf(parseInt));
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    /* renamed from: onCreate$lambda-0  reason: not valid java name */
+    public static final void m32onCreate$lambda0(MainActivity3 this$0, TextView textView, TextView textView2, Ref.DoubleRef mesesTotalesDecimal, Ref.ObjectRef Nombre, Ref.ObjectRef identificacion, Ref.ObjectRef talla, Ref.ObjectRef peso, Ref.ObjectRef muac, Ref.ObjectRef triceps, Ref.ObjectRef cefalico, Ref.ObjectRef subescapular, Ref.ObjectRef genero, Ref.ObjectRef edema, Ref.ObjectRef medicion, TextView textView3, EditText editText, EditText editText2, EditText editText3, Ref.IntRef totalAniosEdad, Ref.IntRef totalMesesEdad, Ref.IntRef totalDiasEdad, View view) {
+        Intrinsics.checkNotNullParameter(this$0, "this$0");
+        Intrinsics.checkNotNullParameter(mesesTotalesDecimal, "$mesesTotalesDecimal");
+        Intrinsics.checkNotNullParameter(Nombre, "$Nombre");
+        Intrinsics.checkNotNullParameter(identificacion, "$identificacion");
+        Intrinsics.checkNotNullParameter(talla, "$talla");
+        Intrinsics.checkNotNullParameter(peso, "$peso");
+        Intrinsics.checkNotNullParameter(muac, "$muac");
+        Intrinsics.checkNotNullParameter(triceps, "$triceps");
+        Intrinsics.checkNotNullParameter(cefalico, "$cefalico");
+        Intrinsics.checkNotNullParameter(subescapular, "$subescapular");
+        Intrinsics.checkNotNullParameter(genero, "$genero");
+        Intrinsics.checkNotNullParameter(edema, "$edema");
+        Intrinsics.checkNotNullParameter(medicion, "$medicion");
+        Intrinsics.checkNotNullParameter(totalAniosEdad, "$totalAniosEdad");
+        Intrinsics.checkNotNullParameter(totalMesesEdad, "$totalMesesEdad");
+        Intrinsics.checkNotNullParameter(totalDiasEdad, "$totalDiasEdad");
+        onCreate$edad(editText, editText2, editText3, totalAniosEdad, totalMesesEdad, totalDiasEdad, mesesTotalesDecimal, textView3, textView, textView2);
+        Intent intent = new Intent(this$0, MainActivity.class);
+        String obj = textView.getText().toString();
+        String obj2 = textView2.getText().toString();
+        intent.putExtra("edad", obj);
+        intent.putExtra("cantidadMeses", obj2);
+        System.out.println(mesesTotalesDecimal.element);
+        String valueOf = String.valueOf(Nombre.element);
+        String valueOf2 = String.valueOf(identificacion.element);
+        String valueOf3 = String.valueOf(talla.element);
+        String valueOf4 = String.valueOf(peso.element);
+        String valueOf5 = String.valueOf(muac.element);
+        String valueOf6 = String.valueOf(triceps.element);
+        String valueOf7 = String.valueOf(cefalico.element);
+        String valueOf8 = String.valueOf(subescapular.element);
+        String valueOf9 = String.valueOf(genero.element);
+        String valueOf10 = String.valueOf(edema.element);
+        String valueOf11 = String.valueOf(medicion.element);
+        intent.putExtra("Nombre", valueOf);
+        intent.putExtra("edad", obj);
+        intent.putExtra("identificacion", valueOf2);
+        intent.putExtra("talla", valueOf3);
+        intent.putExtra("peso", valueOf4);
+        intent.putExtra("muac", valueOf5);
+        intent.putExtra("triceps", valueOf6);
+        intent.putExtra("cefalico", valueOf7);
+        intent.putExtra("subescapular", valueOf8);
+        intent.putExtra("genero", valueOf9);
+        intent.putExtra("edema", valueOf10);
+        intent.putExtra("medicion", valueOf11);
+        intent.putExtra("mesesExactos", textView3.getText());
+        intent.putExtra("año", editText.getText().toString());
+        intent.putExtra("mes", editText2.getText().toString());
+        intent.putExtra("dia", editText3.getText().toString());
+        intent.putExtra("visibleFecha", "SI");
+        intent.putExtra("mesesTotalesDecimales", String.valueOf(mesesTotalesDecimal.element));
+        intent.putExtra("totalAñosEdad", String.valueOf(totalAniosEdad.element));
+        intent.putExtra("totalMesesEdad", String.valueOf(totalMesesEdad.element));
+        intent.putExtra("totalDiasEdad", String.valueOf(totalDiasEdad.element));
+        this$0.startActivity(intent);
+        System.out.println(textView3.getText());
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    /* renamed from: onCreate$lambda-1  reason: not valid java name */
+    public static final void m33onCreate$lambda1(MainActivity3 this$0, Ref.ObjectRef Nombre, Ref.ObjectRef identificacion, Ref.ObjectRef talla, Ref.ObjectRef peso, Ref.ObjectRef muac, Ref.ObjectRef triceps, Ref.ObjectRef cefalico, Ref.ObjectRef subescapular, Ref.ObjectRef genero, Ref.ObjectRef edema, Ref.ObjectRef medicion, View view) {
+        Intrinsics.checkNotNullParameter(this$0, "this$0");
+        Intrinsics.checkNotNullParameter(Nombre, "$Nombre");
+        Intrinsics.checkNotNullParameter(identificacion, "$identificacion");
+        Intrinsics.checkNotNullParameter(talla, "$talla");
+        Intrinsics.checkNotNullParameter(peso, "$peso");
+        Intrinsics.checkNotNullParameter(muac, "$muac");
+        Intrinsics.checkNotNullParameter(triceps, "$triceps");
+        Intrinsics.checkNotNullParameter(cefalico, "$cefalico");
+        Intrinsics.checkNotNullParameter(subescapular, "$subescapular");
+        Intrinsics.checkNotNullParameter(genero, "$genero");
+        Intrinsics.checkNotNullParameter(edema, "$edema");
+        Intrinsics.checkNotNullParameter(medicion, "$medicion");
+        Intent intent = new Intent(this$0, MainActivity.class);
+        String valueOf = String.valueOf(Nombre.element);
+        String valueOf2 = String.valueOf(identificacion.element);
+        String valueOf3 = String.valueOf(talla.element);
+        String valueOf4 = String.valueOf(peso.element);
+        String valueOf5 = String.valueOf(muac.element);
+        String valueOf6 = String.valueOf(triceps.element);
+        String valueOf7 = String.valueOf(cefalico.element);
+        String valueOf8 = String.valueOf(subescapular.element);
+        String valueOf9 = String.valueOf(genero.element);
+        String valueOf10 = String.valueOf(edema.element);
+        String valueOf11 = String.valueOf(medicion.element);
+        intent.putExtra("Nombre", valueOf);
+        intent.putExtra("identificacion", valueOf2);
+        intent.putExtra("talla", valueOf3);
+        intent.putExtra("peso", valueOf4);
+        intent.putExtra("muac", valueOf5);
+        intent.putExtra("triceps", valueOf6);
+        intent.putExtra("cefalico", valueOf7);
+        intent.putExtra("subescapular", valueOf8);
+        intent.putExtra("genero", valueOf9);
+        intent.putExtra("edema", valueOf10);
+        intent.putExtra("medicion", valueOf11);
+        this$0.startActivity(intent);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    /* renamed from: onCreate$lambda-2  reason: not valid java name */
+    public static final void m35onCreate$lambda2(EditText editText, EditText editText2, EditText editText3, Ref.IntRef maxday, Ref.IntRef minday, Ref.IntRef totalAniosEdad, Ref.IntRef totalMesesEdad, Ref.IntRef totalDiasEdad, Ref.DoubleRef mesesTotalesDecimal, TextView textView, TextView textView2, TextView textView3, View view, boolean z) {
+        Intrinsics.checkNotNullParameter(maxday, "$maxday");
+        Intrinsics.checkNotNullParameter(minday, "$minday");
+        Intrinsics.checkNotNullParameter(totalAniosEdad, "$totalAniosEdad");
+        Intrinsics.checkNotNullParameter(totalMesesEdad, "$totalMesesEdad");
+        Intrinsics.checkNotNullParameter(totalDiasEdad, "$totalDiasEdad");
+        Intrinsics.checkNotNullParameter(mesesTotalesDecimal, "$mesesTotalesDecimal");
+        if (z) {
+            return;
+        }
+        String obj = editText.getText().toString();
+        if (Intrinsics.areEqual(obj, "")) {
+            obj = "1";
+        }
+        int parseInt = Integer.parseInt(obj);
+        String obj2 = editText2.getText().toString();
+        String yearCurrent = new SimpleDateFormat("yyyy").format(new Date());
+        if (Intrinsics.areEqual(obj2, "")) {
+            Intrinsics.checkNotNullExpressionValue(yearCurrent, "yearCurrent");
+            obj2 = yearCurrent;
+        }
+        int parseInt2 = Integer.parseInt(obj2);
+        String obj3 = editText3.getText().toString();
+        int parseInt3 = Integer.parseInt(Intrinsics.areEqual(obj3, "") ? "1" : obj3);
+        boolean z2 = (parseInt2 % 4 == 0 && parseInt2 % 100 != 0) || parseInt2 % 400 == 0;
+        if (parseInt3 == 2) {
+            if (z2) {
+                if (parseInt > 29) {
+                    parseInt = 29;
+                }
+                editText.setText(String.valueOf(parseInt));
+            } else {
+                if (parseInt > 28) {
+                    parseInt = 28;
+                }
+                editText.setText(String.valueOf(parseInt));
+            }
+        }
+        if (parseInt3 == 1 || parseInt3 == 3 || parseInt3 == 5 || parseInt3 == 10 || parseInt3 == 12 || parseInt3 == 7 || parseInt3 == 8) {
+            maxday.element = 31;
+        }
+        if (parseInt3 == 4 || parseInt3 == 6 || parseInt3 == 9 || parseInt3 == 11) {
+            maxday.element = 30;
+        }
+        editText.setFilters(new InputFilter[]{new InputFilterMinMax(minday.element, maxday.element)});
+        if (parseInt3 == 4 || parseInt3 == 6 || parseInt3 == 9 || parseInt3 == 11) {
+            if (parseInt > 30) {
+                parseInt = 30;
+            }
+            editText.setText(String.valueOf(parseInt));
+        }
+        onCreate$fechamaxima(editText2, editText3, editText);
+        onCreate$edad(editText2, editText3, editText, totalAniosEdad, totalMesesEdad, totalDiasEdad, mesesTotalesDecimal, textView, textView2, textView3);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    /* renamed from: onCreate$lambda-3  reason: not valid java name */
+    public static final void m36onCreate$lambda3(EditText editText, EditText editText2, EditText editText3, Ref.IntRef maxday, Ref.IntRef minday, Ref.IntRef totalAniosEdad, Ref.IntRef totalMesesEdad, Ref.IntRef totalDiasEdad, Ref.DoubleRef mesesTotalesDecimal, TextView textView, TextView textView2, TextView textView3, View view, boolean z) {
+        Intrinsics.checkNotNullParameter(maxday, "$maxday");
+        Intrinsics.checkNotNullParameter(minday, "$minday");
+        Intrinsics.checkNotNullParameter(totalAniosEdad, "$totalAniosEdad");
+        Intrinsics.checkNotNullParameter(totalMesesEdad, "$totalMesesEdad");
+        Intrinsics.checkNotNullParameter(totalDiasEdad, "$totalDiasEdad");
+        Intrinsics.checkNotNullParameter(mesesTotalesDecimal, "$mesesTotalesDecimal");
+        if (z) {
+            return;
+        }
+        String obj = editText.getText().toString();
+        if (Intrinsics.areEqual(obj, "")) {
+            obj = "1";
+        }
+        int parseInt = Integer.parseInt(obj);
+        String obj2 = editText2.getText().toString();
+        String yearCurrent = new SimpleDateFormat("yyyy").format(new Date());
+        if (Intrinsics.areEqual(obj2, "")) {
+            Intrinsics.checkNotNullExpressionValue(yearCurrent, "yearCurrent");
+            obj2 = yearCurrent;
+        }
+        int parseInt2 = Integer.parseInt(obj2);
+        String obj3 = editText3.getText().toString();
+        int parseInt3 = Integer.parseInt(Intrinsics.areEqual(obj3, "") ? "1" : obj3);
+        boolean z2 = (parseInt2 % 4 == 0 && parseInt2 % 100 != 0) || parseInt2 % 400 == 0;
+        if (parseInt3 == 2) {
+            if (z2) {
+                if (parseInt > 29) {
+                    parseInt = 29;
+                }
+                editText.setText(String.valueOf(parseInt));
+            } else {
+                if (parseInt > 28) {
+                    parseInt = 28;
+                }
+                editText.setText(String.valueOf(parseInt));
+            }
+        }
+        if (parseInt3 == 1 || parseInt3 == 3 || parseInt3 == 5 || parseInt3 == 10 || parseInt3 == 12 || parseInt3 == 7 || parseInt3 == 8) {
+            maxday.element = 31;
+        }
+        if (parseInt3 == 4 || parseInt3 == 6 || parseInt3 == 9 || parseInt3 == 11) {
+            maxday.element = 30;
+        }
+        editText.setFilters(new InputFilter[]{new InputFilterMinMax(minday.element, maxday.element)});
+        if (parseInt3 == 4 || parseInt3 == 6 || parseInt3 == 9 || parseInt3 == 11) {
+            if (parseInt > 30) {
+                parseInt = 30;
+            }
+            editText.setText(String.valueOf(parseInt));
+        }
+        onCreate$fechamaxima(editText2, editText3, editText);
+        onCreate$edad(editText2, editText3, editText, totalAniosEdad, totalMesesEdad, totalDiasEdad, mesesTotalesDecimal, textView, textView2, textView3);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    /* renamed from: onCreate$lambda-4  reason: not valid java name */
+    public static final void m37onCreate$lambda4(EditText editText, EditText editText2, EditText editText3, Ref.IntRef totalAniosEdad, Ref.IntRef totalMesesEdad, Ref.IntRef totalDiasEdad, Ref.DoubleRef mesesTotalesDecimal, TextView textView, TextView textView2, TextView textView3, View view, boolean z) {
+        Intrinsics.checkNotNullParameter(totalAniosEdad, "$totalAniosEdad");
+        Intrinsics.checkNotNullParameter(totalMesesEdad, "$totalMesesEdad");
+        Intrinsics.checkNotNullParameter(totalDiasEdad, "$totalDiasEdad");
+        Intrinsics.checkNotNullParameter(mesesTotalesDecimal, "$mesesTotalesDecimal");
+        if (z) {
+            return;
+        }
+        String obj = editText.getText().toString();
+        if (Intrinsics.areEqual(obj, "")) {
+            obj = "1";
+        }
+        Integer.parseInt(obj);
+        onCreate$fechamaxima(editText2, editText3, editText);
+        onCreate$edad(editText2, editText3, editText, totalAniosEdad, totalMesesEdad, totalDiasEdad, mesesTotalesDecimal, textView, textView2, textView3);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    /* renamed from: onCreate$lambda-5  reason: not valid java name */
+    public static final void m38onCreate$lambda5(EditText editText, EditText editText2, EditText editText3, Ref.IntRef maxday, Ref.IntRef minday, Ref.IntRef totalAniosEdad, Ref.IntRef totalMesesEdad, Ref.IntRef totalDiasEdad, Ref.DoubleRef mesesTotalesDecimal, TextView textView, TextView textView2, TextView textView3, View view) {
+        Intrinsics.checkNotNullParameter(maxday, "$maxday");
+        Intrinsics.checkNotNullParameter(minday, "$minday");
+        Intrinsics.checkNotNullParameter(totalAniosEdad, "$totalAniosEdad");
+        Intrinsics.checkNotNullParameter(totalMesesEdad, "$totalMesesEdad");
+        Intrinsics.checkNotNullParameter(totalDiasEdad, "$totalDiasEdad");
+        Intrinsics.checkNotNullParameter(mesesTotalesDecimal, "$mesesTotalesDecimal");
+        String obj = editText.getText().toString();
+        if (Intrinsics.areEqual(obj, "")) {
+            obj = "1";
+        }
+        int parseInt = Integer.parseInt(obj);
+        String obj2 = editText2.getText().toString();
+        String yearCurrent = new SimpleDateFormat("yyyy").format(new Date());
+        if (Intrinsics.areEqual(obj2, "")) {
+            Intrinsics.checkNotNullExpressionValue(yearCurrent, "yearCurrent");
+            obj2 = yearCurrent;
+        }
+        int parseInt2 = Integer.parseInt(obj2);
+        String obj3 = editText3.getText().toString();
+        int parseInt3 = Integer.parseInt(Intrinsics.areEqual(obj3, "") ? "1" : obj3);
+        int i = parseInt2 + 1;
+        editText2.setText(String.valueOf(i));
+        boolean z = (i % 4 == 0 && i % 100 != 0) || i % 400 == 0;
+        if (parseInt3 == 2) {
+            if (z) {
+                if (parseInt > 29) {
+                    parseInt = 29;
+                }
+                editText.setText(String.valueOf(parseInt));
+            } else {
+                if (parseInt > 28) {
+                    parseInt = 28;
+                }
+                editText.setText(String.valueOf(parseInt));
+            }
+        }
+        if (parseInt3 == 1 || parseInt3 == 3 || parseInt3 == 5 || parseInt3 == 10 || parseInt3 == 12 || parseInt3 == 7 || parseInt3 == 8) {
+            maxday.element = 31;
+        }
+        if (parseInt3 == 4 || parseInt3 == 6 || parseInt3 == 9 || parseInt3 == 11) {
+            maxday.element = 30;
+        }
+        editText.setFilters(new InputFilter[]{new InputFilterMinMax(minday.element, maxday.element)});
+        if (parseInt3 == 4 || parseInt3 == 6 || parseInt3 == 9 || parseInt3 == 11) {
+            if (parseInt > 30) {
+                parseInt = 30;
+            }
+            editText.setText(String.valueOf(parseInt));
+        }
+        onCreate$fechamaxima(editText2, editText3, editText);
+        onCreate$edad(editText2, editText3, editText, totalAniosEdad, totalMesesEdad, totalDiasEdad, mesesTotalesDecimal, textView, textView2, textView3);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    /* renamed from: onCreate$lambda-6  reason: not valid java name */
+    public static final void m39onCreate$lambda6(EditText editText, EditText editText2, EditText editText3, Ref.IntRef maxday, Ref.IntRef minday, Ref.IntRef totalAniosEdad, Ref.IntRef totalMesesEdad, Ref.IntRef totalDiasEdad, Ref.DoubleRef mesesTotalesDecimal, TextView textView, TextView textView2, TextView textView3, View view) {
+        Intrinsics.checkNotNullParameter(maxday, "$maxday");
+        Intrinsics.checkNotNullParameter(minday, "$minday");
+        Intrinsics.checkNotNullParameter(totalAniosEdad, "$totalAniosEdad");
+        Intrinsics.checkNotNullParameter(totalMesesEdad, "$totalMesesEdad");
+        Intrinsics.checkNotNullParameter(totalDiasEdad, "$totalDiasEdad");
+        Intrinsics.checkNotNullParameter(mesesTotalesDecimal, "$mesesTotalesDecimal");
+        String obj = editText.getText().toString();
+        if (Intrinsics.areEqual(obj, "")) {
+            obj = "1";
+        }
+        int parseInt = Integer.parseInt(obj);
+        String obj2 = editText2.getText().toString();
+        String yearCurrent = new SimpleDateFormat("yyyy").format(new Date());
+        if (Intrinsics.areEqual(obj2, "")) {
+            Intrinsics.checkNotNullExpressionValue(yearCurrent, "yearCurrent");
+            obj2 = yearCurrent;
+        }
+        int parseInt2 = Integer.parseInt(obj2);
+        String obj3 = editText3.getText().toString();
+        int parseInt3 = Integer.parseInt(Intrinsics.areEqual(obj3, "") ? "1" : obj3);
+        int i = parseInt2 - 1;
+        editText2.setText(String.valueOf(i));
+        boolean z = (i % 4 == 0 && i % 100 != 0) || i % 400 == 0;
+        if (parseInt3 == 2) {
+            if (z) {
+                if (parseInt > 29) {
+                    parseInt = 29;
+                }
+                editText.setText(String.valueOf(parseInt));
+            } else {
+                if (parseInt > 28) {
+                    parseInt = 28;
+                }
+                editText.setText(String.valueOf(parseInt));
+            }
+        }
+        if (parseInt3 == 1 || parseInt3 == 3 || parseInt3 == 5 || parseInt3 == 10 || parseInt3 == 12 || parseInt3 == 7 || parseInt3 == 8) {
+            maxday.element = 31;
+        }
+        if (parseInt3 == 4 || parseInt3 == 6 || parseInt3 == 9 || parseInt3 == 11) {
+            maxday.element = 30;
+        }
+        editText.setFilters(new InputFilter[]{new InputFilterMinMax(minday.element, maxday.element)});
+        if (parseInt3 == 4 || parseInt3 == 6 || parseInt3 == 9 || parseInt3 == 11) {
+            if (parseInt > 30) {
+                parseInt = 30;
+            }
+            editText.setText(String.valueOf(parseInt));
+        }
+        onCreate$fechamaxima(editText2, editText3, editText);
+        onCreate$edad(editText2, editText3, editText, totalAniosEdad, totalMesesEdad, totalDiasEdad, mesesTotalesDecimal, textView, textView2, textView3);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    /* renamed from: onCreate$lambda-7  reason: not valid java name */
+    public static final void m40onCreate$lambda7(EditText editText, EditText editText2, EditText editText3, Ref.IntRef maxday, Ref.IntRef minday, Ref.IntRef totalAniosEdad, Ref.IntRef totalMesesEdad, Ref.IntRef totalDiasEdad, Ref.DoubleRef mesesTotalesDecimal, TextView textView, TextView textView2, TextView textView3, View view) {
+        Intrinsics.checkNotNullParameter(maxday, "$maxday");
+        Intrinsics.checkNotNullParameter(minday, "$minday");
+        Intrinsics.checkNotNullParameter(totalAniosEdad, "$totalAniosEdad");
+        Intrinsics.checkNotNullParameter(totalMesesEdad, "$totalMesesEdad");
+        Intrinsics.checkNotNullParameter(totalDiasEdad, "$totalDiasEdad");
+        Intrinsics.checkNotNullParameter(mesesTotalesDecimal, "$mesesTotalesDecimal");
+        String obj = editText.getText().toString();
+        if (Intrinsics.areEqual(obj, "")) {
+            obj = "1";
+        }
+        int parseInt = Integer.parseInt(obj);
+        String obj2 = editText2.getText().toString();
+        String yearCurrent = new SimpleDateFormat("yyyy").format(new Date());
+        if (Intrinsics.areEqual(obj2, "")) {
+            Intrinsics.checkNotNullExpressionValue(yearCurrent, "yearCurrent");
+            obj2 = yearCurrent;
+        }
+        int parseInt2 = Integer.parseInt(obj2);
+        String obj3 = editText3.getText().toString();
+        int parseInt3 = Integer.parseInt(Intrinsics.areEqual(obj3, "") ? "1" : obj3) + 1;
+        if (parseInt3 > 12) {
+            parseInt3 = 1;
+        }
+        editText3.setText(String.valueOf(parseInt3));
+        boolean z = (parseInt2 % 4 == 0 && parseInt2 % 100 != 0) || parseInt2 % 400 == 0;
+        if (parseInt3 == 2) {
+            if (z) {
+                if (parseInt > 29) {
+                    parseInt = 29;
+                }
+                editText.setText(String.valueOf(parseInt));
+            } else {
+                if (parseInt > 28) {
+                    parseInt = 28;
+                }
+                editText.setText(String.valueOf(parseInt));
+            }
+        }
+        if (parseInt3 == 1 || parseInt3 == 3 || parseInt3 == 5 || parseInt3 == 10 || parseInt3 == 12 || parseInt3 == 7 || parseInt3 == 8) {
+            maxday.element = 31;
+        }
+        if (parseInt3 == 4 || parseInt3 == 6 || parseInt3 == 9 || parseInt3 == 11) {
+            maxday.element = 30;
+        }
+        editText.setFilters(new InputFilter[]{new InputFilterMinMax(minday.element, maxday.element)});
+        if (parseInt3 == 4 || parseInt3 == 6 || parseInt3 == 9 || parseInt3 == 11) {
+            if (parseInt > 30) {
+                parseInt = 30;
+            }
+            editText.setText(String.valueOf(parseInt));
+        }
+        onCreate$fechamaxima(editText2, editText3, editText);
+        onCreate$edad(editText2, editText3, editText, totalAniosEdad, totalMesesEdad, totalDiasEdad, mesesTotalesDecimal, textView, textView2, textView3);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    /* renamed from: onCreate$lambda-8  reason: not valid java name */
+    public static final void m41onCreate$lambda8(EditText editText, EditText editText2, EditText editText3, Ref.IntRef maxday, Ref.IntRef minday, Ref.IntRef totalAniosEdad, Ref.IntRef totalMesesEdad, Ref.IntRef totalDiasEdad, Ref.DoubleRef mesesTotalesDecimal, TextView textView, TextView textView2, TextView textView3, View view) {
+        Intrinsics.checkNotNullParameter(maxday, "$maxday");
+        Intrinsics.checkNotNullParameter(minday, "$minday");
+        Intrinsics.checkNotNullParameter(totalAniosEdad, "$totalAniosEdad");
+        Intrinsics.checkNotNullParameter(totalMesesEdad, "$totalMesesEdad");
+        Intrinsics.checkNotNullParameter(totalDiasEdad, "$totalDiasEdad");
+        Intrinsics.checkNotNullParameter(mesesTotalesDecimal, "$mesesTotalesDecimal");
+        String obj = editText.getText().toString();
+        if (Intrinsics.areEqual(obj, "")) {
+            obj = "1";
+        }
+        int parseInt = Integer.parseInt(obj);
+        String obj2 = editText2.getText().toString();
+        String yearCurrent = new SimpleDateFormat("yyyy").format(new Date());
+        if (Intrinsics.areEqual(obj2, "")) {
+            Intrinsics.checkNotNullExpressionValue(yearCurrent, "yearCurrent");
+            obj2 = yearCurrent;
+        }
+        int parseInt2 = Integer.parseInt(obj2);
+        String obj3 = editText3.getText().toString();
+        int parseInt3 = Integer.parseInt(Intrinsics.areEqual(obj3, "") ? "1" : obj3) - 1;
+        if (parseInt3 < 1) {
+            parseInt3 = 12;
+        }
+        editText3.setText(String.valueOf(parseInt3));
+        boolean z = (parseInt2 % 4 == 0 && parseInt2 % 100 != 0) || parseInt2 % 400 == 0;
+        if (parseInt3 == 2) {
+            if (z) {
+                if (parseInt > 29) {
+                    parseInt = 29;
+                }
+                editText.setText(String.valueOf(parseInt));
+            } else {
+                if (parseInt > 28) {
+                    parseInt = 28;
+                }
+                editText.setText(String.valueOf(parseInt));
+            }
+        }
+        if (parseInt3 == 1 || parseInt3 == 3 || parseInt3 == 5 || parseInt3 == 10 || parseInt3 == 12 || parseInt3 == 7 || parseInt3 == 8) {
+            maxday.element = 31;
+        }
+        if (parseInt3 == 4 || parseInt3 == 6 || parseInt3 == 9 || parseInt3 == 11) {
+            maxday.element = 30;
+        }
+        editText.setFilters(new InputFilter[]{new InputFilterMinMax(minday.element, maxday.element)});
+        if (parseInt3 == 4 || parseInt3 == 6 || parseInt3 == 9 || parseInt3 == 11) {
+            if (parseInt > 30) {
+                parseInt = 30;
+            }
+            editText.setText(String.valueOf(parseInt));
+        }
+        onCreate$fechamaxima(editText2, editText3, editText);
+        onCreate$edad(editText2, editText3, editText, totalAniosEdad, totalMesesEdad, totalDiasEdad, mesesTotalesDecimal, textView, textView2, textView3);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    /* renamed from: onCreate$lambda-9  reason: not valid java name */
+    public static final void m42onCreate$lambda9(EditText editText, EditText editText2, EditText editText3, Ref.IntRef maxday, Ref.IntRef minday, Ref.IntRef totalAniosEdad, Ref.IntRef totalMesesEdad, Ref.IntRef totalDiasEdad, Ref.DoubleRef mesesTotalesDecimal, TextView textView, TextView textView2, TextView textView3, View view) {
+        Intrinsics.checkNotNullParameter(maxday, "$maxday");
+        Intrinsics.checkNotNullParameter(minday, "$minday");
+        Intrinsics.checkNotNullParameter(totalAniosEdad, "$totalAniosEdad");
+        Intrinsics.checkNotNullParameter(totalMesesEdad, "$totalMesesEdad");
+        Intrinsics.checkNotNullParameter(totalDiasEdad, "$totalDiasEdad");
+        Intrinsics.checkNotNullParameter(mesesTotalesDecimal, "$mesesTotalesDecimal");
+        String obj = editText.getText().toString();
+        if (Intrinsics.areEqual(obj, "")) {
+            obj = "1";
+        }
+        int parseInt = Integer.parseInt(obj) + 1;
+        String obj2 = editText2.getText().toString();
+        String yearCurrent = new SimpleDateFormat("yyyy").format(new Date());
+        if (Intrinsics.areEqual(obj2, "")) {
+            Intrinsics.checkNotNullExpressionValue(yearCurrent, "yearCurrent");
+            obj2 = yearCurrent;
+        }
+        int parseInt2 = Integer.parseInt(obj2);
+        String obj3 = editText3.getText().toString();
+        int parseInt3 = Integer.parseInt(Intrinsics.areEqual(obj3, "") ? "1" : obj3);
+        boolean z = (parseInt2 % 4 == 0 && parseInt2 % 100 != 0) || parseInt2 % 400 == 0;
+        if (parseInt3 == 2) {
+            if (z) {
+                if (parseInt > 29) {
+                    parseInt = 1;
+                }
+                editText.setText(String.valueOf(parseInt));
+            } else {
+                if (parseInt > 28) {
+                    parseInt = 1;
+                }
+                editText.setText(String.valueOf(parseInt));
+            }
+        }
+        if (parseInt3 == 1 || parseInt3 == 3 || parseInt3 == 5 || parseInt3 == 10 || parseInt3 == 12 || parseInt3 == 7 || parseInt3 == 8) {
+            maxday.element = 31;
+        }
+        if (parseInt3 == 4 || parseInt3 == 6 || parseInt3 == 9 || parseInt3 == 11) {
+            maxday.element = 30;
+        }
+        editText.setFilters(new InputFilter[]{new InputFilterMinMax(minday.element, maxday.element)});
+        if (parseInt3 == 1 || parseInt3 == 3 || parseInt3 == 5 || parseInt3 == 10 || parseInt3 == 12 || parseInt3 == 7 || parseInt3 == 8) {
+            if (parseInt > 31) {
+                parseInt = 1;
+            }
+            editText.setText(String.valueOf(parseInt));
+        }
+        if (parseInt3 == 4 || parseInt3 == 6 || parseInt3 == 9 || parseInt3 == 11) {
+            editText.setText(String.valueOf(parseInt <= 30 ? parseInt : 1));
+        }
+        onCreate$fechamaxima(editText2, editText3, editText);
+        onCreate$edad(editText2, editText3, editText, totalAniosEdad, totalMesesEdad, totalDiasEdad, mesesTotalesDecimal, textView, textView2, textView3);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    /* renamed from: onCreate$lambda-10  reason: not valid java name */
+    public static final void m34onCreate$lambda10(EditText editText, EditText editText2, EditText editText3, Ref.IntRef maxday, Ref.IntRef minday, Ref.IntRef totalAniosEdad, Ref.IntRef totalMesesEdad, Ref.IntRef totalDiasEdad, Ref.DoubleRef mesesTotalesDecimal, TextView textView, TextView textView2, TextView textView3, View view) {
+        Intrinsics.checkNotNullParameter(maxday, "$maxday");
+        Intrinsics.checkNotNullParameter(minday, "$minday");
+        Intrinsics.checkNotNullParameter(totalAniosEdad, "$totalAniosEdad");
+        Intrinsics.checkNotNullParameter(totalMesesEdad, "$totalMesesEdad");
+        Intrinsics.checkNotNullParameter(totalDiasEdad, "$totalDiasEdad");
+        Intrinsics.checkNotNullParameter(mesesTotalesDecimal, "$mesesTotalesDecimal");
+        String obj = editText.getText().toString();
+        if (Intrinsics.areEqual(obj, "")) {
+            obj = "1";
+        }
+        int parseInt = Integer.parseInt(obj) - 1;
+        String obj2 = editText2.getText().toString();
+        String yearCurrent = new SimpleDateFormat("yyyy").format(new Date());
+        if (Intrinsics.areEqual(obj2, "")) {
+            Intrinsics.checkNotNullExpressionValue(yearCurrent, "yearCurrent");
+            obj2 = yearCurrent;
+        }
+        int parseInt2 = Integer.parseInt(obj2);
+        String obj3 = editText3.getText().toString();
+        int parseInt3 = Integer.parseInt(Intrinsics.areEqual(obj3, "") ? "1" : obj3);
+        boolean z = (parseInt2 % 4 == 0 && parseInt2 % 100 != 0) || parseInt2 % 400 == 0;
+        if (parseInt3 == 2) {
+            if (z) {
+                if (parseInt < 1) {
+                    parseInt = 29;
+                }
+                editText.setText(String.valueOf(parseInt));
+            } else {
+                if (parseInt < 1) {
+                    parseInt = 28;
+                }
+                editText.setText(String.valueOf(parseInt));
+            }
+        }
+        if (parseInt3 == 1 || parseInt3 == 3 || parseInt3 == 5 || parseInt3 == 10 || parseInt3 == 12 || parseInt3 == 7 || parseInt3 == 8) {
+            maxday.element = 31;
+        }
+        if (parseInt3 == 4 || parseInt3 == 6 || parseInt3 == 9 || parseInt3 == 11) {
+            maxday.element = 30;
+        }
+        editText.setFilters(new InputFilter[]{new InputFilterMinMax(minday.element, maxday.element)});
+        if (parseInt3 == 1 || parseInt3 == 3 || parseInt3 == 5 || parseInt3 == 10 || parseInt3 == 12 || parseInt3 == 7 || parseInt3 == 8) {
+            if (parseInt < 1) {
+                parseInt = 31;
+            }
+            editText.setText(String.valueOf(parseInt));
+        }
+        if (parseInt3 == 4 || parseInt3 == 6 || parseInt3 == 9 || parseInt3 == 11) {
+            editText.setText(String.valueOf(parseInt < 1 ? 30 : parseInt));
+        }
+        onCreate$fechamaxima(editText2, editText3, editText);
+        onCreate$edad(editText2, editText3, editText, totalAniosEdad, totalMesesEdad, totalDiasEdad, mesesTotalesDecimal, textView, textView2, textView3);
+    }
+
+    /* compiled from: MainActivity3.kt */
+    @Metadata(d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0010\r\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0004\u0018\u00002\u00020\u0001B\u0015\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0003¢\u0006\u0002\u0010\u0005J:\u0010\u0006\u001a\u0004\u0018\u00010\u00072\u0006\u0010\b\u001a\u00020\u00072\u0006\u0010\t\u001a\u00020\u00032\u0006\u0010\n\u001a\u00020\u00032\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010\r\u001a\u00020\u00032\u0006\u0010\u000e\u001a\u00020\u0003H\u0016J \u0010\u000f\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u00032\u0006\u0010\u0012\u001a\u00020\u00032\u0006\u0010\u0013\u001a\u00020\u0003H\u0002R\u000e\u0010\u0004\u001a\u00020\u0003X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006\u0014"}, d2 = {"Lapp/apaiary/AntNutrAPP/MainActivity3$InputFilterMinMax;", "Landroid/text/InputFilter;", "min", "", "max", "(II)V", "filter", "", "source", "start", "end", "dest", "Landroid/text/Spanned;", "dstart", "dend", "isInRange", "", "a", "b", "c", "app_release"}, k = 1, mv = {1, 5, 1}, xi = 48)
+    /* loaded from: classes.dex */
+    public static final class InputFilterMinMax implements InputFilter {
+        private int max;
+        private int min;
+
+        private final boolean isInRange(int i, int i2, int i3) {
+            if (i2 > i) {
+                if (i <= i3 && i3 <= i2) {
+                    return true;
+                }
+            } else if (i2 <= i3 && i3 <= i) {
+                return true;
+            }
+            return false;
+        }
+
+        public InputFilterMinMax(int i, int i2) {
+            this.min = i;
+            this.max = i2;
+        }
+
+        @Override // android.text.InputFilter
+        public CharSequence filter(CharSequence source, int i, int i2, Spanned dest, int i3, int i4) {
+            Intrinsics.checkNotNullParameter(source, "source");
+            Intrinsics.checkNotNullParameter(dest, "dest");
+            try {
+                StringBuilder sb = new StringBuilder();
+                sb.append((Object) dest.subSequence(0, i3));
+                sb.append((Object) source);
+                sb.append((Object) dest.subSequence(i4, dest.length()));
+                if (isInRange(this.min, this.max, Integer.parseInt(sb.toString()))) {
+                    return null;
+                }
+            } catch (NumberFormatException unused) {
+            }
+            return "";
+        }
+    }
+}
